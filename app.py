@@ -40,9 +40,7 @@ def close_db(_error: object | None = None) -> None:
 
 @app.route("/")
 def index():
-    if "user_id" in session:
-        return redirect(url_for("dashboard"))
-    return redirect(url_for("login"))
+    return render_template("index.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
